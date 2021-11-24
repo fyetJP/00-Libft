@@ -5,27 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:14:25 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/09/16 14:16:06 by jpires-p         ###   ########.fr       */
+/*   Created: 2021/11/23 17:33:04 by jpires-p          #+#    #+#             */
+/*   Updated: 2021/11/23 19:44:56 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	unsigned char	*buffer;
-	
-	buffer = (unsigned char *)s;
-	if (buffer != (unsigned char *)NULL)
+	unsigned int i;
+
+	i = 0;
+	if ((unsigned char *)s != (unsigned char *)NULL)
 	{
-		while (n > 0  && *buffer != '\0')
+		while (i < n)
 		{
-			if (*buffer == (unsigned char)c)
-				return (buffer);
-			n--;
-			buffer++;
+			if (*((unsigned char *)s + i) == (unsigned char)c)
+				return (((void *)s + i));
+			i++;
 		}
-		if ((unsigned char)c == '\0')
-			return (buffer);
 	}
-	return ((unsigned char *)NULL);
+	return ((void *)NULL);
 }

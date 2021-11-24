@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:14:25 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/09/16 14:16:06 by jpires-p         ###   ########.fr       */
+/*   Created: 2021/11/23 17:38:32 by jpires-p          #+#    #+#             */
+/*   Updated: 2021/11/23 18:26:21 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	**ft_split(char const *s, char c)
 		}
 	}
 	ret[inc_len[2]] = ft_substr(s, inc_len[1], inc_len[0] - inc_len[1]);
-	ret[inc_len[2] + 1] = '\0';
+	ret[inc_len[2] + 1] = "\0";
 	return (ret);
 }
 //Possible problem with malloc, if fail revisit this.

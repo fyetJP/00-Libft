@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:14:25 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/09/16 14:16:06 by jpires-p         ###   ########.fr       */
+/*   Created: 2021/11/23 17:39:17 by jpires-p          #+#    #+#             */
+/*   Updated: 2021/11/23 18:36:55 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -18,9 +20,7 @@ char	*ft_strchr(const char *s, int c)
 		return ((char *)NULL);
 	to_find = (char)c;
 	while (*s != '\0' && *s != to_find)
-	{
-		*s++;
-	}
+		s++;
     if (*s != to_find)
 		return ((char *)NULL);
 	return ((char *)s);

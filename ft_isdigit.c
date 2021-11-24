@@ -5,15 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:14:25 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/09/16 14:16:06 by jpires-p         ###   ########.fr       */
+/*   Created: 2021/11/23 17:25:36 by jpires-p          #+#    #+#             */
+/*   Updated: 2021/11/23 19:49:50 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isdigit(int c)
 {
 	if (!(c >= 48 && c <= 57))
 		return (0);
 	else
-		return (0);
+		return (1);
 }

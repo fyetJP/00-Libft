@@ -5,10 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/14 19:14:25 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/09/16 14:16:06 by jpires-p         ###   ########.fr       */
+/*   Created: 2021/11/23 17:43:38 by jpires-p          #+#    #+#             */
+/*   Updated: 2021/11/23 17:43:48 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_strncmp(const char *str1, const char *str2, size_t n)
 {
