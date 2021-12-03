@@ -12,35 +12,49 @@
 
 #include "libft.h"
 
+static unsigned int	word_count(char const *s, char c);
+
 char	**ft_split(char const *s, char c)
 {
-	size_t	inc_len[3];
+	size_t	i[3];
 	char	**ret;
-	
-	if (!s || !(ret = (char **)malloc(((ft_strlen(s) + 1) * sizeof(char *)))))
-		return ((char **)NULL);
-	inc_len[0] = 0;
-	inc_len[1] = 0;
-	inc_len[2] = 0;
-	while (s[inc_len[0]]  != '\0')
+
+	ret = (char **)malloc(((word_count(s, c) + 1) * sizeof(char *)));
+	if (!s || !ret)
+		return ((char **) NULL);
+	i[0] = 0;
+	i[1] = 0;
+	while (i[0] < ft_strlen(s) && i[1] < (size_t)word_count(s, c))
 	{
-		if (c != (char)s[inc_len[0]])
-			inc_len[0]++;
+		if ((char)s[i[0]] == c)
+			i[0]++;
 		else
 		{
-			ret[inc_len[2]] = ft_substr(s, inc_len[1], inc_len[0] - inc_len[1]);
-			inc_len[2]++;
-			while ((char)s[inc_len[0]] == c)
-				inc_len[0]++;
-			inc_len[1] = inc_len[0];
+			i[2] = i[0];
+			while ((char)s[i[0]] != c && s[i[0]] != '\0')
+				i[0]++;
+			ret[i[1]] = ft_substr(s, i[2], (i[0] - i[2]));
+			i[1]++;
 		}
 	}
-	ret[inc_len[2]] = ft_substr(s, inc_len[1], inc_len[0] - inc_len[1]);
-	ret[inc_len[2] + 1] = "\0";
+	ret[i[1]++] = (char *) NULL;
 	return (ret);
 }
-//Possible problem with malloc, if fail revisit this.
-//inc_len[] is an array of increments and lengths.
-//inc_len[0] is increment for searching the string passed and tells the end of the word
-//inc_len[1] is the start of the word
-//inc_len[2] is the increment for the return pointer to pointer and tells the number of words
+
+static unsigned int	word_count(char const *s, char c)
+{
+	unsigned int	num;
+
+	num = 0;
+	while (*s)
+	{
+		while (*s == c && *s)
+			s++;
+		if (*s == '\0')
+			break ;
+		while (*s != c && *s)
+			s++;
+		num++;
+	}
+	return (num);
+}

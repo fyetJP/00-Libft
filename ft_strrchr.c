@@ -16,11 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 {
 	char		to_find;
 	const char	*p_last_ocu;
-	
-	if (s == (const char *)NULL || !s)
-		return ((char *)NULL);
+
+	if (s == (const char *) NULL || !s)
+		return ((char *) NULL);
 	to_find = (char)c;
-	p_last_ocu = (const char *)NULL;
+	p_last_ocu = (const char *) NULL;
 	while (*s != '\0')
 	{
 		if (*s == to_find)

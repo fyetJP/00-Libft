@@ -15,18 +15,19 @@
 void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void			*p_array;
-	unsigned char	*buffer;
-	size_t			totSize_inc[2];
-	
-	totSize_inc[0] = size * nmemb;
-	if (!(p_array = (void *)malloc(totSize_inc[0])))
-		return ((void *)NULL);
-	buffer = p_array;
-	totSize_inc[1] = 0;
-	while (totSize_inc[1] < totSize_inc[0])
+	unsigned char	*str;
+	size_t			tot_size_inc[2];
+
+	tot_size_inc[0] = size * nmemb;
+	p_array = (void *)malloc(tot_size_inc[0]);
+	if (!p_array)
+		return ((void *) NULL);
+	str = p_array;
+	tot_size_inc[1] = 0;
+	while (tot_size_inc[1] < tot_size_inc[0])
 	{
-		buffer[totSize_inc[1]] = (unsigned char)0;
-		totSize_inc[1]++;
+		str[tot_size_inc[1]] = (unsigned char)0;
+		tot_size_inc[1]++;
 	}
 	return (p_array);
 }

@@ -17,12 +17,11 @@ int	ft_isalpha(int c)
 	int	flag;
 
 	if (!((c >= 65 && c <= 90)
-			|| (c >= 97 && c <= 122 )))
+			|| (c >= 97 && c <= 122)))
 		return (0);
 	else if (c >= 65 && c <= 90)
 		flag = 1;
 	else
 		flag = 2;
-	
 	return (flag);
 }

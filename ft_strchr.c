@@ -15,13 +15,13 @@
 char	*ft_strchr(const char *s, int c)
 {
 	char	to_find;
-	
-	if (s == (const char *)NULL || !s)
-		return ((char *)NULL);
+
+	if (s == (const char *) NULL || !s)
+		return ((char *) NULL);
 	to_find = (char)c;
 	while (*s != '\0' && *s != to_find)
 		s++;
-    if (*s != to_find)
-		return ((char *)NULL);
+	if (*s != to_find)
+		return ((char *) NULL);
 	return ((char *)s);
 }
