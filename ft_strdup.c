@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:39:48 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 17:39:51 by jpires-p         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:44:04 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_strdup(const char *s)
 	int		i;
 	char	*dst;
 
-	if (s == ((void *)0))
-		return ((char *) NULL);
 	i = 0;
 	while (s[i] != '\0')
 		i++;

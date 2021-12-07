@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:28:49 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 17:28:56 by jpires-p         ###   ########.fr       */
+/*   Updated: 2021/12/07 16:14:42 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
-	
-	if(!lst || !del)
+
+	if (!lst || !del)
 		return ;
 	while (lst && *lst)
 	{

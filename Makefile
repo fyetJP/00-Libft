@@ -6,7 +6,7 @@
 #    By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 17:02:04 by jpires-p          #+#    #+#              #
-#    Updated: 2021/11/23 17:04:49 by jpires-p         ###   ########.fr        #
+#    Updated: 2021/12/07 16:08:42 by jpires-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ all:		$(NAME)
 		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.${INSRC}
 
 snorm:
-		$(NORMFSH) $(SRCS)
+		$(NORMFSH) $(SRCS) $(BSRC)
 		$(NORMDEF) $(INSRC)
 
 $(NAME):	$(OBJS) $(INSRC)

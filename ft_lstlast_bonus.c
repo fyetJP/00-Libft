@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:30:30 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 17:30:39 by jpires-p         ###   ########.fr       */
+/*   Updated: 2021/12/07 16:14:05 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return ((t_list *)NULL);
-	while (lst->next != (t_list *)NULL)
+		return ((t_list *) NULL);
+	while (lst->next != (t_list *) NULL)
 		lst = lst->next;
-	return (lst);  
+	return (lst);
 }

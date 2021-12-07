@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:38:32 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 18:26:21 by jpires-p         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:01:57 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	**ft_split(char const *s, char c)
 	char	**ret;
 
 	ret = (char **)malloc(((word_count(s, c) + 1) * sizeof(char *)));
-	if (!s || !ret)
+	if (!ret)
 		return ((char **) NULL);
 	i[0] = 0;
 	i[1] = 0;

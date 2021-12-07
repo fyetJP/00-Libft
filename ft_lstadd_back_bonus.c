@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:27:35 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 17:27:42 by jpires-p         ###   ########.fr       */
+/*   Updated: 2021/12/07 16:12:32 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 void	ft_lstadd_back(t_list **lst, t_list *newl)
 {
 	t_list	*temp;
-	
+
 	if (!lst || !newl)
 		return ;
 	if (!*lst)
 	{
 		*lst = newl;
-		return;
+		return ;
 	}
 	temp = *lst;
 	while (temp->next)
