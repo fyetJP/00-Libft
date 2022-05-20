@@ -6,7 +6,7 @@
 #    By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/23 17:02:04 by jpires-p          #+#    #+#              #
-#    Updated: 2021/12/07 16:08:42 by jpires-p         ###   ########.fr        #
+#    Updated: 2022/05/15 04:02:17 by jpires-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,47 +17,38 @@ NORMDEF 	= norminette -R CheckDefine
 CREALIB		= ar -crs
 GENILIB		= ranlib
 RM			= rm -f
+RM_DIR		= rm -Rf
 
+SRCS_PATH	= ./src/
+INC_PATH	= ./includes/
+OBJS_PATH	= ./objs/
 NAME		= libft.a
-INSRC		= libft.h
-SRCS		= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
-				ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c \
-				ft_strlcpy.c ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c \
-				ft_strrchr.c ft_strncmp.c ft_memchr.c ft_memcmp.c ft_strnstr.c \
-				ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
-				ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
-				ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c 
-OBJS		= ${SRCS:.c=.o}
-BSRC		= ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
-				ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \
-				ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
-BOBJS		= ${BSRC:.c=.o}
+INSRC		= $(wildcard $(INC_PATH)*.h)
+SRCS		= $(wildcard $(SRCS_PATH)*.c)
+OBJS		= $(patsubst $(SRCS_PATH)%.c, $(OBJS_PATH)%.o, $(SRCS))
 
 all:		$(NAME)
 
-.c.o:
-		$(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I.${INSRC}
+$(OBJS_PATH):
+			mkdir $(OBJS_PATH)
 
-snorm:
-		$(NORMFSH) $(SRCS) $(BSRC)
-		$(NORMDEF) $(INSRC)
+$(OBJS_PATH)%.o: $(SRCS_PATH)%.c
+		$(CC) $(CFLAGS) -c $< -o $@ -I$(INC_PATH)
 
-$(NAME):	$(OBJS) $(INSRC)
+$(NAME):	$(OBJS_PATH) $(OBJS)
 		$(CREALIB) $(NAME) $(OBJS)
 		$(GENILIB) $(NAME)
 
-bonus:		$(NAME) $(BOBJS)
-		$(CREALIB) $(NAME) $(BOBJS)
-		$(GENILIB) $(NAME)
+snorm:
+		$(NORMFSH) $(SRCS)
+		$(NORMDEF) $(INSRC)
 	
 clean:
-		$(RM) $(OBJS) $(BOBJS)
+		$(RM_DIR) $(OBJS_PATH)
 	
 fclean:		clean
 		$(RM) $(NAME)
 
 re:			fclean all
 
-reb:		fclean bonus
-
-.PHONY:		all clean fclean re reb
+.PHONY:		all snorm clean fclean re
