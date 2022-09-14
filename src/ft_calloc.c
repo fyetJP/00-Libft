@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:23:54 by jpires-p          #+#    #+#             */
-/*   Updated: 2021/11/23 17:23:57 by jpires-p         ###   ########.fr       */
+/*   Updated: 2022/06/13 19:49:34 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ void	*ft_calloc(size_t nmemb, size_t size)
 	unsigned char	*str;
 	size_t			tot_size_inc[2];
 
+	if (!nmemb || !size)
+		return ((void *)malloc(0));
+	if ((nmemb | size) >= 4294967295)
+		return ((void *) NULL);
 	tot_size_inc[0] = size * nmemb;
 	p_array = (void *)malloc(tot_size_inc[0]);
 	if (!p_array)
