@@ -6,7 +6,7 @@
 /*   By: jpires-p <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 17:49:17 by jpires-p          #+#    #+#             */
-/*   Updated: 2022/09/12 20:57:18 by jpires-p         ###   ########.fr       */
+/*   Updated: 2022/10/29 18:36:54 by jpires-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,5 +90,6 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_isstr(char *arg);
 int		ft_strisint(char *str);
 int		ft_strcmp_max_min_int(char *str, size_t len);
+size_t	ft_word_count(char const *s, char c);
 
 #endif
